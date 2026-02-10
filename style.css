@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+header {
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+section {
+  padding: 2rem;
+}
+
+.project-card {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1e1e1e;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 1rem;
+}
+
+.project-title {
+  margin: 0;
+}
+
+.project-type {
+  font-style: italic;
+  color: #aaa;
+}
+
+.project-tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project-tags li {
+  background: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.project-link {
+  display: block;
+  margin-bottom: 0.5rem; /* optional spacing */
+}
+
+.project-title {
+  display: flex;
+  align-items: center; /* vertically center the icon with text */
+  gap: 0.5rem;        /* space between icon and text */
+}
+
+.project-icon {
+  width: 24px;        /* adjust size as needed */
+  height: 24px;
+}
+
+.site-footer {
+  text-align: center;           /* center everything */
+  padding: 2rem 1rem;           /* space around content */
+  background-color: #f8f9fa;    /* light gray background */
+  color: #555;                  /* subtle text color */
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;   /* optional top border */
+}
+
+.site-footer p {
+  margin: 0.3rem 0;             /* spacing between lines */
+}
+
+/* optional: make the date and copyright slightly different */
+.last-updated {
+  font-style: italic;
+  color: #777;
+}
+
+.skill-filter {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.skill-filter:hover {
+  opacity: 1;
+}
+
+.skill-filter.active {
+  opacity: 1;
+  font-weight: bold;
+  text-decoration: underline;
+}

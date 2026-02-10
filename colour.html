@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Skill Colors</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #1a1a1a;
+      }
+      .skill-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        max-width: 1200px;
+      }
+      .skill-card {
+        padding: 20px;
+        border-radius: 8px;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+      .skill-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .skill-hex {
+        font-size: 12px;
+        opacity: 0.8;
+        font-family: monospace;
+      }
+      h1 {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Skill Colors Visualization</h1>
+    <div class="skill-container" id="skills"></div>
+
+    <body>
+    <h1>Skill Colors Visualization</h1>
+    
+    <div style="margin-bottom: 20px;">
+        <label for="method-select" style="color: white; margin-right: 10px;">Method:</label>
+        <select id="method-select" style="padding: 5px;">
+            <option value="magnitude">Magnitude (L2 Norm)</option>
+            <option value="mean">Mean</option>
+            <option value="pca">PCA</option>
+        </select>
+    </div>
+    
+    <div class="skill-container" id="skills"></div>
+
+    <script>
+        function loadSkills(method) {
+            fetch(`skill_colors_${method}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('skills');
+                    container.innerHTML = ''; // Clear existing
+                    
+                    const sortedEntries = Object.entries(data).sort((a, b) => 
+                        a[1].normalized - b[1].normalized
+                    );
+                    
+                    sortedEntries.forEach(([skill, colorInfo]) => {
+                        const card = document.createElement('div');
+                        card.className = 'skill-card';
+                        card.style.backgroundColor = colorInfo.hex;
+                        
+                        card.innerHTML = `
+                            <div class="skill-name">${skill}</div>
+                            <div class="skill-hex">${colorInfo.hex}</div>
+                            <div class="skill-hex">Normalized: ${colorInfo.normalized.toFixed(4)}</div>
+                        `;
+                        
+                        container.appendChild(card);
+                    });
+                });
+        }
+        
+        // Load initial method
+        loadSkills('magnitude');
+        
+        // Listen for changes
+        document.getElementById('method-select').addEventListener('change', (e) => {
+            loadSkills(e.target.value);
+        });
+    </script>
+</body>
+  </body>
+</html>
