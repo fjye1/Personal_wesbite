@@ -54,6 +54,7 @@ const SKILLS_BY_CATEGORY = {
       "Email Marketing",
       "Marketing Analytics",
       "Content Creation",
+      "Email Automation"
     ],
   },
   "Data Science": {
@@ -100,6 +101,9 @@ const SKILLS_BY_CATEGORY = {
       "CI/CD",
       "Linux",
       "Bash",
+      "CLI",
+      "Cron Jobs",
+      "SSH"
     ],
   },
   "Project Management": {
@@ -140,12 +144,13 @@ const PROJECTS = [
       "HTML",
       "CSS",
       "Google Apps Script",
+      "Git",
     ],
     image: "images/idle_hands_1200x630px.png",
     favicon: "images/idle_hands_favicon.png",
     links: [
       { text: "View Project →", url: "https://idlehandsmassagetherapy.co.uk/" },
-      { text: "Read Docs →", url: "https://github.com/fjye1/Idle_hands" },
+      { text: "GitHub →", url: "https://github.com/fjye1/Idle_hands" },
     ],
   },
   {
@@ -160,6 +165,7 @@ const PROJECTS = [
       "PostgreSQL",
       "API",
       "Authentication",
+      "Git",
     ],
     image: "images/Regal_chocolate_1200X630px.png",
     favicon: "images/Choc_flav.svg",
@@ -172,20 +178,44 @@ const PROJECTS = [
     title: "PostgreSQL",
     type: "Sub-Project of Regal Chocolate.",
     description:
-      "A dynamic online store built with Python, Flask, and PostgreSQL,featuring user authentication, product management, and interactive API-driven functionality.",
-    skills: [
-      "Python",
-      "Flask",
-      "UI/UX Design",
-      "PostgreSQL",
-      "API",
-      "Authentication",
-    ],
+      "A PostgreSQL database powering the Regal Chocolate platform, featuring automated triggers for real-time updates and regular dumps for backup and maintenance, ensuring reliable and consistent data management.",
+    skills: ["PostgreSQL", "SQL", "API", "Authentication", "CLI"],
     image: "images/PostgreSQL_1200X630px.png",
     favicon: "images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
-      { text: "GitHub →", url: "https://github.com/fjye1/chocolate_website" },
+      {
+        text: "Read Docs →",
+        url: "https://github.com/fjye1/chocolate_website",
+      },
+    ],
+  },
+  {
+    title: "Remote Worker",
+    type: "Sub-Project of Regal Chocolate.",
+    description:
+      "A headless background worker running on a Linux server laptop, responsible for scheduled database operations, automated email handling, and maintenance tasks using cron jobs. Acts as a backend sub-routine for the main website, enabling continuous automation via CLI-based workflows and CI/CD deployment.",
+    skills: [
+      "PostgreSQL",
+      "Email Automation",
+      "API",
+      "Authentication",
+      "Linux",
+      "CLI",
+      "Bash",
+      "CI/CD",
+      "Cron Jobs",
+      "SSH"
+      ,
+    ],
+    image: "images/Task_Listener_1200X630px.png",
+    favicon: "images/Choc_flav.svg",
+    links: [
+      { text: "View Project →", url: "https://regalchocolate.in/" },
+      {
+        text: "Read Docs →",
+        url: "https://github.com/fjye1/chocolate_website",
+      },
     ],
   },
   // Add more projects...
@@ -324,6 +354,8 @@ filterBtns.forEach((btn) => {
   });
 });
 
+// Build the project card from infomation in the Projects const
+
 function createProjectCard(project) {
   const skillsHTML = project.skills
     .map((skill) => `<li>${skill}</li>`)
@@ -381,8 +413,10 @@ function loadHTML(containerId, url, callback) {
     .catch((err) => console.error(`Failed to load ${url}:`, err));
 }
 
+// Load Footer and then do something in this case get the current date and update the year element
 loadHTML("footer", "footer.html", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
 });
 
+// Load header
 loadHTML("header", "header.html", () => {});
