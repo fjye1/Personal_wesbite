@@ -133,7 +133,14 @@ const PROJECTS = [
     type: "Static Front-End Project",
     description:
       "A custom static business website with social share cards and a serverless contact form built using Google Apps Script.",
-    skills: ["JavaScript", "UI/UX Design","Canva", "HTML", "CSS", "Google Apps Script" ],
+    skills: [
+      "JavaScript",
+      "UI/UX Design",
+      "Canva",
+      "HTML",
+      "CSS",
+      "Google Apps Script",
+    ],
     image: "images/idle_hands_1200x630px.png",
     favicon: "images/idle_hands_favicon.png",
     links: [
@@ -180,7 +187,7 @@ const PROJECTS = [
       { text: "View Project →", url: "https://regalchocolate.in/" },
       { text: "GitHub →", url: "https://github.com/fjye1/chocolate_website" },
     ],
-  }
+  },
   // Add more projects...
 ];
 
@@ -283,21 +290,6 @@ function filterProjects() {
   });
 }
 
-// Function to load a file into a container
-function loadHTML(containerId, url, callback) {
-  fetch(url)
-    .then((res) => res.text())
-    .then((html) => {
-      document.getElementById(containerId).innerHTML = html;
-      if (callback) callback();
-    })
-    .catch((err) => console.error(`Failed to load ${url}:`, err));
-}
-
-loadHTML("footer", "footer.html", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
-});
-
 //Filtering for skills in projects
 
 const filterBtns = document.querySelectorAll(".filter-btn");
@@ -377,3 +369,20 @@ function createProjectCard(project) {
     </div>
   `;
 }
+
+// Function to load a file into a container
+function loadHTML(containerId, url, callback) {
+  fetch(url)
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById(containerId).innerHTML = html;
+      if (callback) callback();
+    })
+    .catch((err) => console.error(`Failed to load ${url}:`, err));
+}
+
+loadHTML("footer", "footer.html", () => {
+  document.getElementById("year").textContent = new Date().getFullYear();
+});
+
+loadHTML("header", "header.html", () => {});
