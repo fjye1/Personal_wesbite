@@ -54,7 +54,7 @@ const SKILLS_BY_CATEGORY = {
       "Email Marketing",
       "Marketing Analytics",
       "Content Creation",
-      "Email Automation"
+      "SMTP / Email Automation",
     ],
   },
   "Data Science": {
@@ -82,6 +82,7 @@ const SKILLS_BY_CATEGORY = {
       "AJAX",
       "API",
       "Authentication",
+      "Open-Graph"
     ],
   },
   Database: {
@@ -103,7 +104,8 @@ const SKILLS_BY_CATEGORY = {
       "Bash",
       "CLI",
       "Cron Jobs",
-      "SSH"
+      "SSH",
+      "Shell"
     ],
   },
   "Project Management": {
@@ -197,7 +199,7 @@ const PROJECTS = [
       "A headless background worker running on a Linux server laptop, responsible for scheduled database operations, automated email handling, and maintenance tasks using cron jobs. Acts as a backend sub-routine for the main website, enabling continuous automation via CLI-based workflows and CI/CD deployment.",
     skills: [
       "PostgreSQL",
-      "Email Automation",
+      "SMTP / Email Automation",
       "API",
       "Authentication",
       "Linux",
@@ -205,8 +207,7 @@ const PROJECTS = [
       "Bash",
       "CI/CD",
       "Cron Jobs",
-      "SSH"
-      ,
+      "SSH",
     ],
     image: "images/Task_Listener_1200X630px.png",
     favicon: "images/Choc_flav.svg",
@@ -215,6 +216,30 @@ const PROJECTS = [
       {
         text: "Read Docs →",
         url: "https://github.com/fjye1/chocolate_website",
+      },
+    ],
+  },
+  {
+    title: "Monitor",
+    type: "Infrastructure & Monitoring Utility",
+    description:
+      "A lightweight monitoring script running on a headless Linux node. It checks whether the website is reachable, and keeps an eye on CPU load and temperatures. If something looks wrong, it fires off an email alert right away — and sends a summary report every 24 hours.",
+    skills: [
+      "Linux",
+      "Bash",
+      "Shell",
+      "SMTP / Email Automation",
+      "Cron Jobs",
+      "SSH",
+      "CLI",
+      
+    ],
+    image: "images/Sentinel_Monitor_1200X630px.png",
+    favicon: "images/Terminal_Favicon.svg",
+    links: [
+      {
+        text: "View Shell Scripts →",
+        url: "https://github.com/fjye1/Monitor",
       },
     ],
   },
