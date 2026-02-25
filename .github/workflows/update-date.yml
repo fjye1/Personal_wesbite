@@ -22,8 +22,8 @@ jobs:
 
       - name: Replace placeholder in HTML
         run: |
-          # Replace placeholder YYYY-MM-DD with last commit date in index.html
-          sed -i "s|<span id=\"last-updated\">.*</span>|<span id=\"last-updated\">$LAST_DATE</span>|" index.html
+          # Replace placeholder YYYY-MM-DD with last commit date in footer.html
+          sed -i "s|<span id=\"last-updated\">.*</span>|<span id=\"last-updated\">$LAST_DATE</span>|" footer.html
 
       - name: Commit updated HTML
         run: |
