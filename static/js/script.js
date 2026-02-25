@@ -148,8 +148,8 @@ const PROJECTS = [
       "Google Apps Script",
       "Git",
     ],
-    image: "images/idle_hands_1200x630px.png",
-    favicon: "images/idle_hands_favicon.png",
+    image: "static/images/idle_hands_1200x630px.png",
+    favicon: "static/images/idle_hands_favicon.png",
     links: [
       { text: "View Project →", url: "https://idlehandsmassagetherapy.co.uk/" },
       { text: "GitHub →", url: "https://github.com/fjye1/Idle_hands" },
@@ -169,8 +169,8 @@ const PROJECTS = [
       "Authentication",
       "Git",
     ],
-    image: "images/Regal_chocolate_1200X630px.png",
-    favicon: "images/Choc_flav.svg",
+    image: "static/images/Regal_chocolate_1200X630px.png",
+    favicon: "static/images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
       { text: "GitHub →", url: "https://github.com/fjye1/chocolate_website" },
@@ -182,8 +182,8 @@ const PROJECTS = [
     description:
       "A PostgreSQL database powering the Regal Chocolate platform, featuring automated triggers for real-time updates and regular dumps for backup and maintenance, ensuring reliable and consistent data management.",
     skills: ["PostgreSQL", "SQL", "API", "Authentication", "CLI"],
-    image: "images/PostgreSQL_1200X630px.png",
-    favicon: "images/Choc_flav.svg",
+    image: "static/images/PostgreSQL_1200X630px.png",
+    favicon: "static/images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
       {
@@ -209,8 +209,8 @@ const PROJECTS = [
       "Cron Jobs",
       "SSH",
     ],
-    image: "images/Task_Listener_1200X630px.png",
-    favicon: "images/Choc_flav.svg",
+    image: "static/images/Task_Listener_1200X630px.png",
+    favicon: "static/images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
       {
@@ -234,8 +234,8 @@ const PROJECTS = [
       "CLI",
       
     ],
-    image: "images/Sentinel_Monitor_1200X630px.png",
-    favicon: "images/Terminal_Favicon.svg",
+    image: "static/images/Sentinel_Monitor_1200X630px.png",
+    favicon: "static/images/Terminal_Favicon.svg",
     links: [
       {
         text: "View Shell Scripts →",
