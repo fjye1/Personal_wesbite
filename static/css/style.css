@@ -91,7 +91,7 @@ section {
 }
 
 .project-icon {
-  width: 24px;        /* adjust size as needed */
+  width: auto;        /* adjust size as needed */
   height: 24px;
 }
 
