@@ -234,8 +234,8 @@ const PROJECTS = [
       "CLI",
       
     ],
-    image: "static/images/Sentinel_Monitor_1200X630px.png",
-    favicon: "static/images/Terminal_Favicon.svg",
+    image: "static/images/Bash_script.png",
+    favicon: "static/images/utils.svg",
     links: [
       {
         text: "View Shell Scripts →",
