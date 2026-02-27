@@ -426,22 +426,3 @@ function createProjectCard(project) {
     </div>
   `;
 }
-
-// Function to load a file into a container
-function loadHTML(containerId, url, callback) {
-  fetch(url)
-    .then((res) => res.text())
-    .then((html) => {
-      document.getElementById(containerId).innerHTML = html;
-      if (callback) callback();
-    })
-    .catch((err) => console.error(`Failed to load ${url}:`, err));
-}
-
-// Load Footer and then do something in this case get the current date and update the year element
-loadHTML("footer", "footer.html", () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
-});
-
-// Load header
-loadHTML("header", "header.html", () => {});
