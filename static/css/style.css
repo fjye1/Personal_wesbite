@@ -29,7 +29,7 @@ section {
 
 
 .project-card,
-.certificate-card-card {
+.certificate-card {
   width: 100%;           /* fill the grid column */
   max-width: 400px;      /* prevents cards/images from getting too wide */
   border-radius: 10px;
