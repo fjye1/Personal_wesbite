@@ -1,0 +1,6 @@
+# robots.txt for https://frederickelledge.cloud/
+
+User-agent: *
+Disallow:
+
+Sitemap: https://frederickelledge.cloud/sitemap.xml
