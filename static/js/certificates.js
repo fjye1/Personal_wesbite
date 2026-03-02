@@ -60,12 +60,15 @@ function createCertCard(cert) {
 
   return `
     <div class="certificate-card">
-      <img
-        src="${cert.image}"
-        alt="${cert.title} certificate image"
-        class="project-img"
-      />
-
+    
+      <a href="${cert.links[0].url}" target="_blank" rel="noopener">
+        <img
+          src="${cert.image}"
+          alt="${cert.title} project image"
+          class="project-img"
+        />
+      </a>
+    
       <div class="project-body">
         <h3 class="project-title">
           <img
