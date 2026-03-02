@@ -1,4 +1,4 @@
-name: Update Last Commit Date
+name: Update Last Commit Date & Sitemap
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # replace with your default branch if different
 
 jobs:
-  update-date:
+  update-date-and-sitemap:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,16 +20,49 @@ jobs:
           LAST_DATE=$(git log -1 --format=%cd --date=short)
           echo "LAST_DATE=$LAST_DATE" >> $GITHUB_ENV
 
-      - name: Replace placeholder in HTML
+      - name: Replace last-updated placeholder in footer
         run: |
-          # Replace placeholder YYYY-MM-DD with last commit date in footer.html
           sed -i "s|<span id=\"last-updated\">.*</span>|<span id=\"last-updated\">$LAST_DATE</span>|" footer.html
 
-      - name: Commit updated HTML
+      - name: Generate sitemap.xml with last commit date
+        run: |
+          python3 -c "
+          content = '''<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+          <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
+            <url>
+              <loc>https://frederickelledge.cloud/</loc>
+              <lastmod>$LAST_DATE</lastmod>
+              <priority>1.0</priority>
+            </url>
+            <url>
+              <loc>https://frederickelledge.cloud/about.html</loc>
+              <lastmod>$LAST_DATE</lastmod>
+              <priority>0.8</priority>
+            </url>
+            <url>
+              <loc>https://frederickelledge.cloud/projects.html</loc>
+              <lastmod>$LAST_DATE</lastmod>
+              <priority>0.9</priority>
+            </url>
+            <url>
+              <loc>https://frederickelledge.cloud/certificates.html</loc>
+              <lastmod>$LAST_DATE</lastmod>
+              <priority>0.7</priority>
+            </url>
+            <url>
+              <loc>https://frederickelledge.cloud/contact.html</loc>
+              <lastmod>$LAST_DATE</lastmod>
+              <priority>0.6</priority>
+            </url>
+          </urlset>'''
+          open('sitemap.xml', 'w').write(content)
+                  "
+
+      - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add footer.html
-          # Only commit if there’s a change to prevent empty commits
-          git diff-index --quiet HEAD || git commit -m "Update last updated date"
+          git add footer.html sitemap.xml
+          # Only commit if there’s a change
+          git diff-index --quiet HEAD || git commit -m "Update last updated date and sitemap"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
