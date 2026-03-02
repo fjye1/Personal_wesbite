@@ -26,26 +26,24 @@ section {
   justify-items: center; /* center cards in wide containers */
 }
 
-
-
 .project-card,
 .certificate-card {
-  width: 100%;           /* fill the grid column */
-  max-width: 400px;      /* prevents cards/images from getting too wide */
+  width: 100%; /* fill the grid column */
+  max-width: 400px; /* prevents cards/images from getting too wide */
   border-radius: 10px;
   overflow: hidden;
   background: #1e1e1e;
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
 }
 
 .project-img {
   width: 100%;
-  max-width: 100%;       /* never exceed card width */
-  height: auto;          /* maintain aspect ratio */
-  object-fit: cover;     /* crop if necessary, but don’t stretch */
+  max-width: 100%; /* never exceed card width */
+  height: auto; /* maintain aspect ratio */
+  object-fit: cover; /* crop if necessary, but don’t stretch */
 }
 
 .project-body {
@@ -91,25 +89,25 @@ section {
 .project-title {
   display: flex;
   align-items: center; /* vertically center the icon with text */
-  gap: 0.5rem;        /* space between icon and text */
+  gap: 0.5rem; /* space between icon and text */
 }
 
 .project-icon {
-  width: auto;        /* adjust size as needed */
+  width: auto; /* adjust size as needed */
   height: 24px;
 }
 
 .site-footer {
-  text-align: center;           /* center everything */
-  padding: 2rem 1rem;           /* space around content */
-  background-color: #f8f9fa;    /* light gray background */
-  color: #555;                  /* subtle text color */
+  text-align: center; /* center everything */
+  padding: 2rem 1rem; /* space around content */
+  background-color: #f8f9fa; /* light gray background */
+  color: #555; /* subtle text color */
   font-size: 0.9rem;
-  border-top: 1px solid #ddd;   /* optional top border */
+  border-top: 1px solid #ddd; /* optional top border */
 }
 
 .site-footer p {
-  margin: 0.3rem 0;             /* spacing between lines */
+  margin: 0.3rem 0; /* spacing between lines */
 }
 
 /* optional: make the date and copyright slightly different */
@@ -145,7 +143,25 @@ section {
   transition: opacity 0.2s;
 }
 
-.see-more-btn:hover {
+.see-more-btn:hover,
+.contact-icon:hover {
   opacity: 1;
-  text-decoration: underline;
+  transform: scale(1.1);
 }
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* space between icons */
+  margin-top: 1rem;
+}
+
+.contact-icon {
+  width: 32px; /* adjust to taste */
+  height: 32px;
+  opacity: 0.7;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
