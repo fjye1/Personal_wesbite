@@ -385,19 +385,25 @@ function createProjectCard(project) {
   const skillsHTML = project.skills
     .map((skill) => `<li>${skill}</li>`)
     .join("");
+
   const linksHTML = project.links
     .map(
-      (link) => `<a href="${link.url}" class="project-link">${link.text}</a>`,
+      (link) =>
+        `<a href="${link.url}" class="project-link" target="_blank" rel="noopener">
+          ${link.text}
+        </a>`
     )
     .join("\n                ");
 
   return `
     <div class="project-card">
-      <img
-        src="${project.image}"
-        alt="${project.title} project image"
-        class="project-img"
-      />
+      <a href="${project.links[0].url}" target="_blank" rel="noopener">
+        <img
+          src="${project.image}"
+          alt="${project.title} project image"
+          class="project-img"
+        />
+      </a>
 
       <div class="project-body">
         <h3 class="project-title">
