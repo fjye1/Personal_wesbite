@@ -248,9 +248,15 @@ const PROJECTS = [
 
 const projectsContainer = document.querySelector(".projects-container");
 
-PROJECTS.forEach((project) => {
+// return the limit of 4 if on home page or limit of PROJECTS.length
+
+const projectlimit = document.body.id === "home" ? 4 : PROJECTS.length;
+
+PROJECTS.slice(0, projectlimit).forEach(project => {
   projectsContainer.innerHTML += createProjectCard(project);
 });
+
+
 
 // Then run your existing code to apply styles and build filters
 document.querySelectorAll(".project-tags li").forEach(applySkillStyles);

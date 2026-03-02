@@ -91,6 +91,10 @@ function createCertCard(cert) {
 
 const certificateContainer = document.querySelector(".certificate-container");
 
-CERTIFICATES.forEach((cert) => {
+// limit displayed certs to 4 if on homepage 
+
+const certlimit = document.body.id === "home" ? 4 : CERTIFICATES.length;
+
+CERTIFICATES.slice(0, certlimit).forEach(cert => {
   certificateContainer.innerHTML += createCertCard(cert);
 });
