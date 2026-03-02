@@ -18,14 +18,18 @@ section {
   padding: 2rem;
 }
 
-.projects-container {
+.projects-container,
+.certificate-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   justify-items: center; /* center cards in wide containers */
 }
 
-.project-card {
+
+
+.project-card,
+.certificate-card {
   width: 100%;           /* fill the grid column */
   max-width: 400px;      /* prevents cards/images from getting too wide */
   border-radius: 10px;

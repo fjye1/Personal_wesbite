@@ -59,7 +59,7 @@ function createCertCard(cert) {
     .join("\n                ");
 
   return `
-    <div class="project-card">
+    <div class="certificate-card">
       <img
         src="${cert.image}"
         alt="${cert.title} certificate image"
@@ -86,8 +86,8 @@ function createCertCard(cert) {
   `;
 }
 
-const projectsContainer = document.querySelector(".projects-container");
+const certificateContainer = document.querySelector(".certificate-container");
 
 CERTIFICATES.forEach((cert) => {
-  projectsContainer.innerHTML += createCertCard(cert);
+  certificateContainer.innerHTML += createCertCard(cert);
 });
