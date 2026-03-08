@@ -1,8 +1,8 @@
 :root {
-  --bg-main: #1e1e1e;
-  --bg-card: #1e1e1e;
-  --text-main: #ffffff;
-  --shadow-main: rgba(0, 0, 0, 0.3);
+  --bg-main: #E1E1DF; 
+  --bg-card: #DFDED0;
+  --text-main: #000000;
+  --shadow-main: rgb(0, 0, 0);
   --project-type: #aaa;
   --last-updated: #777;
   --page-background:#ebeaeb;
@@ -11,10 +11,10 @@
 html body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: var(--text-main) !important;
+  background: var(--bg-main) !important;
 }
 header {
-  background: #222;
+  background: #DFDED0;
   color: var(--text-main);
   padding: 1rem;
   text-align: center;
@@ -202,6 +202,7 @@ section {
   overflow: hidden;
   flex-shrink: 0;
   margin-right: -24px;
+  margin-bottom: -24px;
 }
 
 .cat {
