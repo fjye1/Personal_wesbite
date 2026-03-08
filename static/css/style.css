@@ -38,7 +38,7 @@ section {
 
 .about-card {
   width: 100%;
-  max-width: 1200px;   /* wider so animation fits */
+  max-width: 800px;   /* wider so animation fits */
   border-radius: 10px;
   background: var(--bg-card);
   color: var(--text-main);
@@ -197,7 +197,7 @@ section {
 
 .animation-stage {
   position: relative;
-  width: 600px;
+  width: 400px;
   height: 300px;
   overflow: hidden;
   flex-shrink: 0;
@@ -221,8 +221,8 @@ section {
 }
 
 @keyframes cat-walk {
-  from { left: 800px; }
-  to   { left: 350px; }   /* nose reaches glass */
+  from { left: 600px; }
+  to   { left: 120px; }
 }
 
 @keyframes cat-frames {
@@ -233,7 +233,7 @@ section {
 .glass {
   position: absolute;
   bottom: 0;
-  left: 300px;
+  left: 60px;
 
   width: 100px;
   height: 300px;
@@ -249,8 +249,15 @@ section {
   to   { background-position: -300px 0; }
 }
 
-@media (max-width: 20px) {
+@media (max-width: 900px) {
+
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .animation-stage {
     display: none;
   }
+
 }
