@@ -3,12 +3,15 @@
   --bg-card: #1e1e1e;
   --text-main: #ffffff;
   --shadow-main: rgba(0, 0, 0, 0.3);
+  --project-type: #aaa;
+  --last-updated: #777;
+  --page-background:#ebeaeb;
 }
 
-body {
+html body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f4f4f4;
+  background: var(--text-main) !important;
 }
 header {
   background: #222;
@@ -35,13 +38,23 @@ section {
 
 .about-card {
   width: 100%;
-  max-width: 800px; /* wider for text */
+  max-width: 1200px;   /* wider so animation fits */
   border-radius: 10px;
   background: var(--bg-card);
   color: var(--text-main);
   box-shadow: 0 4px 10px var(--shadow-main);
-  padding: 1.2rem 1.5rem;
-  margin: 0 auto; /* center it */
+  padding: 1.5rem;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 500px;
 }
 
 .project-card,
@@ -74,7 +87,7 @@ section {
 
 .project-type {
   font-style: italic;
-  color: #aaa;
+  color: var(--project-type);
 }
 
 .project-tags {
@@ -179,4 +192,65 @@ section {
   transition:
     opacity 0.2s,
     transform 0.2s;
+}
+
+
+.animation-stage {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: -24px;
+}
+
+.cat {
+  position: absolute;
+  bottom: 200px;
+  left: 800px;              /* start off screen */
+
+  width: 200px;
+  height: 100px;
+
+  background: url("../images/spritesheet.png") no-repeat;
+  background-size: 3200px 100px;
+
+  animation:
+    cat-walk 4s linear forwards,
+    cat-frames 16s steps(15) forwards;
+}
+
+@keyframes cat-walk {
+  from { left: 800px; }
+  to   { left: 350px; }   /* nose reaches glass */
+}
+
+@keyframes cat-frames {
+  from { background-position: 0 0; }
+  to   { background-position: -3000px 0; }
+}
+
+.glass {
+  position: absolute;
+  bottom: 0;
+  left: 300px;
+
+  width: 100px;
+  height: 300px;
+
+  background: url("../images/glass_fall_sprite.png") no-repeat;
+
+  animation: glass-fall 0.4s steps(3) forwards;
+  animation-delay: 10s;
+}
+
+@keyframes glass-fall {
+  from { background-position: 0 0; }
+  to   { background-position: -300px 0; }
+}
+
+@media (max-width: 20px) {
+  .animation-stage {
+    display: none;
+  }
 }
