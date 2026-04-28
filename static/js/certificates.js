@@ -48,6 +48,15 @@ const CERTIFICATES = [
       { text: "Verify →", url: "https://www.udemy.com/certificate/UC-81478f2e-6dbe-4d0a-9b46-308958fb4d68/" },
     ],
   },
+  {
+    title: "Self-Hosting with Docker & Linux: Run Your Own Services",
+    type: "Udemy",
+    image: "static/images/Self-Hosting_Docker.jpg",
+    favicon: "static/images/udemy-light.svg",
+    links: [
+      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-55dd28d3-390a-461b-814e-e125c0e11c3c/" },
+    ],
+  },
 
   
   // Add more certificates here...
