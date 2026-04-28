@@ -57,6 +57,15 @@ const CERTIFICATES = [
       { text: "Verify →", url: "https://www.udemy.com/certificate/UC-55dd28d3-390a-461b-814e-e125c0e11c3c/" },
     ],
   },
+  {
+    title: "100 Days of Code™: The Complete Python Pro Bootcamp",
+    type: "Udemy",
+    image: "static/images/Python_100.jpg",
+    favicon: "static/images/udemy-light.svg",
+    links: [
+      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-12d87b7f-f3d2-4135-b671-fda276a86fea/" },
+    ],
+  },
 
   
   // Add more certificates here...
