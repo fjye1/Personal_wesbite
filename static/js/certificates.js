@@ -1,79 +1,113 @@
 const CERTIFICATES = [
-    {
+  {
     title: "DA0-002 - CompTIA Data+",
     type: "ComTIA",
-    image: "static/images/ComTIA.jpg",
+    image: "static/images/ComTIA.webp",
     favicon: "static/images/Comptia-logo.svg",
     links: [
-      { text: "Verify →", url: "https://www.credly.com/badges/9b8018e5-1e79-47a1-b230-b81ea329c9b7/public_url" },
+      {
+        text: "Verify →",
+        url: "https://www.credly.com/badges/9b8018e5-1e79-47a1-b230-b81ea329c9b7/public_url",
+      },
+    ],
+  },
+  {
+    title: "Understanding Coding 603/5854/3 SU",
+    type: "NCFE",
+    image: "static/images/Understanding_code.webp",
+    favicon: "static/images/NCFE.svg",
+    links: [
+      {
+        text: "Verify →",
+        url: "https://www.ncfe.org.uk/qualification-search/?q=Understanding%20Coding%20603%2F5854%2F3%20SU",
+      },
     ],
   },
 
   {
     title: "2025 Python Data Analysis & Visualization Masterclass",
     type: "Udemy",
-    image: "static/images/Python_data.jpg",
+    image: "static/images/Python_data.webp",
     favicon: "static/images/udemy-light.svg",
     links: [
-      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-9ebfa64f-8139-48ee-a5f2-143c0896e458/" },
+      {
+        text: "Verify →",
+        url: "https://www.udemy.com/certificate/UC-9ebfa64f-8139-48ee-a5f2-143c0896e458/",
+      },
     ],
   },
 
   {
     title: "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
     type: "Udemy",
-    image: "static/images/SQL_boot.jpg",
+    image: "static/images/SQL_boot.webp",
     favicon: "static/images/udemy-light.svg",
     links: [
-      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-9d2cd48e-a3ce-4813-8309-9c33983f6072/" },
+      {
+        text: "Verify →",
+        url: "https://www.udemy.com/certificate/UC-9d2cd48e-a3ce-4813-8309-9c33983f6072/",
+      },
     ],
   },
 
   {
     title: "The Git & Github Bootcamp",
     type: "Udemy",
-    image: "static/images/Git.jpg",
+    image: "static/images/Git.webp",
     favicon: "static/images/udemy-light.svg",
     links: [
-      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-82b234b3-e732-419b-a53c-b24efa5e1589/" },
+      {
+        text: "Verify →",
+        url: "https://www.udemy.com/certificate/UC-82b234b3-e732-419b-a53c-b24efa5e1589/",
+      },
     ],
   },
 
   {
     title: "The Complete Regular Expressions(Regex) Course For Beginners",
     type: "Udemy",
-    image: "static/images/Regex.jpg",
+    image: "static/images/Regex.webp",
     favicon: "static/images/udemy-light.svg",
     links: [
-      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-81478f2e-6dbe-4d0a-9b46-308958fb4d68/" },
+      {
+        text: "Verify →",
+        url: "https://www.udemy.com/certificate/UC-81478f2e-6dbe-4d0a-9b46-308958fb4d68/",
+      },
     ],
   },
   {
     title: "Self-Hosting with Docker & Linux: Run Your Own Services",
     type: "Udemy",
-    image: "static/images/Self-Hosting_Docker.jpg",
+    image: "static/images/Self-Hosting_Docker.webp",
     favicon: "static/images/udemy-light.svg",
     links: [
-      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-55dd28d3-390a-461b-814e-e125c0e11c3c/" },
+      {
+        text: "Verify →",
+        url: "https://www.udemy.com/certificate/UC-55dd28d3-390a-461b-814e-e125c0e11c3c/",
+      },
     ],
   },
   {
     title: "100 Days of Code™: The Complete Python Pro Bootcamp",
     type: "Udemy",
-    image: "static/images/Python_100.jpg",
+    image: "static/images/Python_100.webp",
     favicon: "static/images/udemy-light.svg",
     links: [
-      { text: "Verify →", url: "https://www.udemy.com/certificate/UC-12d87b7f-f3d2-4135-b671-fda276a86fea/" },
+      {
+        text: "Verify →",
+        url: "https://www.udemy.com/certificate/UC-12d87b7f-f3d2-4135-b671-fda276a86fea/",
+      },
     ],
   },
 
-  
   // Add more certificates here...
 ];
 
 function createCertCard(cert) {
   const linksHTML = cert.links
-    .map((link) => `<a href="${link.url}" class="project-link">${link.text}</a>`)
+    .map(
+      (link) => `<a href="${link.url}" class="project-link">${link.text}</a>`,
+    )
     .join("\n                ");
 
   return `
@@ -109,10 +143,10 @@ function createCertCard(cert) {
 
 const certificateContainer = document.querySelector(".certificate-container");
 
-// limit displayed certs to 4 if on homepage 
+// limit displayed certs to 4 if on homepage
 
 const certlimit = document.body.id === "home" ? 4 : CERTIFICATES.length;
 
-CERTIFICATES.slice(0, certlimit).forEach(cert => {
+CERTIFICATES.slice(0, certlimit).forEach((cert) => {
   certificateContainer.innerHTML += createCertCard(cert);
 });

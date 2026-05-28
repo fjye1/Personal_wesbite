@@ -148,7 +148,7 @@ const PROJECTS = [
       "Google Apps Script",
       "Git",
     ],
-    image: "static/images/idle_hands_1200x630px.png",
+    image: "static/images/idle_hands_1200x630px.webp",
     favicon: "static/images/idle_hands_favicon.png",
     links: [
       { text: "View Project →", url: "https://idlehandsmassagetherapy.co.uk/" },
@@ -169,7 +169,7 @@ const PROJECTS = [
       "Authentication",
       "Git",
     ],
-    image: "static/images/Regal_chocolate_1200X630px.png",
+    image: "static/images/Regal_chocolate_1200X630px.webp",
     favicon: "static/images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
@@ -182,7 +182,7 @@ const PROJECTS = [
     description:
       "A PostgreSQL database powering the Regal Chocolate platform, featuring automated triggers for real-time updates and regular dumps for backup and maintenance, ensuring reliable and consistent data management.",
     skills: ["PostgreSQL", "SQL", "API", "Authentication", "CLI"],
-    image: "static/images/PostgreSQL_1200X630px.png",
+    image: "static/images/PostgreSQL_1200X630px.webp",
     favicon: "static/images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
@@ -209,7 +209,7 @@ const PROJECTS = [
       "Cron Jobs",
       "SSH",
     ],
-    image: "static/images/Task_Listener_1200X630px.png",
+    image: "static/images/Task_Listener_1200X630px.webp",
     favicon: "static/images/Choc_flav.svg",
     links: [
       { text: "View Project →", url: "https://regalchocolate.in/" },
@@ -234,7 +234,7 @@ const PROJECTS = [
       "CLI",
       
     ],
-    image: "static/images/Bash_script.png",
+    image: "static/images/Bash_script.webp",
     favicon: "static/images/utils.svg",
     links: [
       {
